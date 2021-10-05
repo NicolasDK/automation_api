@@ -1,0 +1,31 @@
+{
+  "name": "automation_api",
+  "version": "1.0.0",
+  "description": "automacao api utilizando api open weather",
+  "main": "index.js",
+  "scripts": {
+    "cy:run": "cypress run --config video=false --env allure=true",
+    "allure:generate": "allure generate allure-results",
+    "allure:open": "allure open allure-report",
+    "allure:clear": "rm -r allure-results/ allure-report || true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicolasDK/automation_api.git"
+  },
+  "author": "Nicolas Deivid Teixeira Ferreira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NicolasDK/automation_api/issues"
+  },
+  "homepage": "https://github.com/NicolasDK/automation_api#readme",
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.19.1",
+    "cypress": "^8.5.0",
+    "cypress-cucumber-preprocessor": "^4.3.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "step_definitions": "cypress/support/steps"
+  }
+}

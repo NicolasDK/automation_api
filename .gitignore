@@ -1,0 +1,6 @@
+cypress.env.json
+cypress/allure-results/
+cypress/allure-report 
+cypress/screenshots/
+cypress/videos/
+node_modules
