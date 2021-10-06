@@ -4,7 +4,7 @@
   "description": "automacao api utilizando api open weather",
   "main": "index.js",
   "scripts": {
-    "cy:run": "cypress run --config video=false --env allure=true",
+    "cy:run": "cypress run --env allure=true",
     "report": "node cypress/report/cucumber-config/cucumber-reporter.js",
     "report:clear": "rm -r cypress/report/cucumber-json/ || true"
   },
