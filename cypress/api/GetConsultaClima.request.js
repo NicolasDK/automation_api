@@ -12,7 +12,8 @@ function city(cidade = '', codEstado = '', codPais = ''){
         url: baseUrl,
         qs: {
             q: params,
-            lang: 'pt',
+            units:'metric',
+            lang:'pt',
             appId: Cypress.env('API_KEY')
         },
         failOnStatusCode: false
@@ -27,7 +28,8 @@ function cityId(idCidade = ''){
         url: baseUrl,
         qs: {
             id: params,
-            lang: 'pt',
+            units:'metric',
+            lang:'pt',
             appId: Cypress.env('API_KEY')
         },
         failOnStatusCode: false
@@ -42,7 +44,8 @@ function geographic(latitude = '', longitude = ''){
         qs: {
             lat: latitude,
             lon: longitude,
-            lang: 'pt',
+            units:'metric',
+            lang:'pt',
             appId: Cypress.env('API_KEY')
         },
         failOnStatusCode: false
@@ -58,7 +61,8 @@ function postalCode(codPostal, codPais){
         url: baseUrl,
         qs: {
             zip: params,
-            lang: 'pt',
+            units:'metric',
+            lang:'pt',
             appId: Cypress.env('API_KEY')
         },
         failOnStatusCode: false
