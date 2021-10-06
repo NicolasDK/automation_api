@@ -1,6 +1,6 @@
 cypress.env.json
-cypress/allure-results/
-cypress/allure-report 
+cypress/report/cucumber-json
+cypress/report/cucumber-report
 cypress/screenshots/
 cypress/videos/
 node_modules
