@@ -1,5 +1,7 @@
 /// <reference types='cypress'/>
 
+var baseUrl = Cypress.config('baseUrl')
+
 function city(cidade = '', codEstado = '', codPais = ''){
     var params = cidade
     if(!codEstado == null){params.concat(`,${codEstado}`)}
@@ -7,7 +9,7 @@ function city(cidade = '', codEstado = '', codPais = ''){
 
     return cy.request({
         method: 'GET',
-        url: 'api.openweathermap.org/data/2.5/weather',
+        url: baseUrl,
         qs: {
             q: params,
             lang: 'pt',
@@ -22,7 +24,7 @@ function cityId(idCidade = ''){
 
     return cy.request({
         method: 'GET',
-        url: 'api.openweathermap.org/data/2.5/weather',
+        url: baseUrl,
         qs: {
             id: params,
             lang: 'pt',
@@ -36,7 +38,7 @@ function geographic(latitude = '', longitude = ''){
 
     return cy.request({
         method: 'GET',
-        url: 'api.openweathermap.org/data/2.5/weather',
+        url: baseUrl,
         qs: {
             lat: latitude,
             lon: longitude,
@@ -53,7 +55,7 @@ function postalCode(codPostal, codPais){
 
     return cy.request({
         method: 'GET',
-        url: 'api.openweathermap.org/data/2.5/weather',
+        url: baseUrl,
         qs: {
             zip: params,
             lang: 'pt',
