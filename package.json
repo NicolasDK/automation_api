@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "cy:run": "cypress run --config video=false --env allure=true",
-    "allure:generate": "allure generate allure-results",
-    "allure:open": "allure open allure-report",
-    "allure:clear": "rm -r allure-results/ allure-report || true"
+    "report": "node cypress/report/cucumber-config/cucumber-reporter.js",
+    "report:clear": "rm -r cypress/report/cucumber-json/ || true"
   },
   "repository": {
     "type": "git",
@@ -20,12 +19,18 @@
   },
   "homepage": "https://github.com/NicolasDK/automation_api#readme",
   "devDependencies": {
-    "@shelex/cypress-allure-plugin": "^2.19.1",
     "cypress": "^8.5.0",
-    "cypress-cucumber-preprocessor": "^4.3.0"
+    "cypress-cucumber-preprocessor": "^4.3.0",
+    "multiple-cucumber-html-reporter": "^1.18.0"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": false,
-    "step_definitions": "cypress/support/steps"
+    "step_definitions": "cypress/support/steps",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/report/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
   }
 }
